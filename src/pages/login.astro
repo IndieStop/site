@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/GeneralLayout.astro";
+const emailReg = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+const nameReg = new RegExp(/^[A-Za-z]+([-']?[A-Za-z]+)?$/);
+const passReg = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+const phoneReg = new RegExp(/^\+(?:[0-9] ?){6,14}[0-9]$/);
+let statuss = false;
+const errors = {
+	username: "",
+	email: "",
+	password: "",
+	phone: "",
+	checkbox: "",
+};
+
+if (Astro.request.method === "POST") {
+	try {
+		const data = await Astro.request.formData();
+		const name = String(data.get("username"));
+		const email = String(data.get("email"));
+		const password = String(data.get("password"));
+		const phone = String(data.get("phone"));
+		const checkbox = String(data.get("checkbox"));
+
+		if (checkbox !== "on") {
+			errors.checkbox += "Please accept the Terms of Service. ";
+		}
+
+		if (name.length < 1 || !nameReg.test(name)) {
+			errors.username += "Please enter a username. ";
+		}
+
+		if (!emailReg.test(email)) {
+			errors.email += "Email is not valid. ";
+		}
+
+		if (password.length < 6 || !passReg.test(password)) {
+			errors.password +=
+				"Password must be at least 6 characters, 1 uppercase, 1 lowercase, 1 number ";
+		}
+
+		if (!phoneReg.test(phone)) {
+			errors.phone += "Phone number is not valid. ";
+		}
+
+		const hasErrors = Object.values(errors).some((msg) => msg);
+		if (!hasErrors) {
+			console.log("Success!");
+			console.log("Name:");
+		} else {
+			console.log("Error!");
+		}
+	} catch (error) {
+		if (error instanceof Error) {
+			console.error(error.message);
+		}
+	} finally {
+		return Astro.redirect("/");
+	}
+}
+---
+
+<Layout title="Login | IndieStop.">
+	<section class="flex flex-col justify-center m-auto min-h-screen max-w-lg">
+		<h1 class="font-extrabold text-4xl">
+			Indie<span class="text-brand-primary">Stop.</span>
+		</h1>
+
+		<h1 class="text-2xl mt-4 mb-2 font-bold py-4">Register Now</h1>
+		<form method="POST" class="max-w-xs space-y-7 text-sm">
+			<label class="block mb-4">
+				Name:
+				<input
+					type="text"
+					name="username"
+					placeholder="Jayesh Doe"
+					required
+					class="bg-brand-surface rounded-xl border-2 border-brand-primary form-input mt-1 block w-full text-black text-sm font-semibold"
+				/>
+			</label>
+			{
+				errors.username && (
+					<p class="text-brand-accent">{errors.username}</p>
+				)
+			}
+
+			<label class="block mb-4">
+				Email:
+				<input
+					type="email"
+					name="email"
+					placeholder="johndoe@nmims.edu.in"
+					required
+					class="bg-brand-surface rounded-xl border-2 border-brand-primary form-input mt-1 block w-full text-black text-sm font-semibold"
+				/>
+			</label>
+			{errors.email && <p class="text-brand-accent">{errors.email}</p>}
+
+			<label class="block mb-4">
+				Phone:
+				<input
+					type="text"
+					name="phone"
+					placeholder="+1 123 456 7890"
+					required
+					class="bg-brand-surface rounded-xl border-2 border-brand-primary form-input mt-1 block w-full text-black text-sm font-semibold"
+				/>
+			</label>
+			{errors.phone && <p class="text-brand-accent">{errors.phone}</p>}
+
+			<label class="block mb-4">
+				Password:
+				<input
+					type="password"
+					name="password"
+					required
+					minlength="6"
+					placeholder="At least 1 uppercase, 1 lowercase, 1 number"
+					class="bg-brand-surface rounded-xl border-2 border-brand-primary form-input mt-1 block w-full text-black text-sm font-semibold"
+				/>
+			</label>
+			{
+				errors.password && (
+					<p class="text-brand-accent">{errors.password}</p>
+				)
+			}
+
+			<label class="block mb-4">
+				<input
+					type="checkbox"
+					name="checkbox"
+					required
+					class="bg-brand-surface rounded-xl border-2 border-brand-primary form-input mt-1 w-6 h-6 text-black text-sm font-semibold"
+				/>
+				I accept the Terms of Service
+			</label>
+			<button class="bg-brand-primary text-white py-2 px-4 rounded block"
+				>Submit</button
+			>
+		</form>
+	</section>
+</Layout>
