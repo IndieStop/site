@@ -1,21 +1,65 @@
 ---
 import Layout from "../layouts/GeneralLayout.astro";
+const rising = [
+	"https://cdn.discordapp.com/attachments/1002669912969449606/1193235844392300634/Celeste_box_art_full.png?ex=65abfa7a&is=6599857a&hm=a52109215f9f1927186b5cf1e0a9295aac5cb469d528f11c20569aab35a6678a&",
+	"https://cdn.discordapp.com/attachments/1002669912969449606/1193238167273353379/e77cbe3c83da8de952bce5bc0f0960092dbc2e08d377f0e082673239322301bb.png?ex=65abfca4&is=659987a4&hm=a2feeddcc3f81d6cd41b4302e3972a34f710f6cbd107d7596a927f5e0db5dc39&",
+	"https://cdn.discordapp.com/attachments/1002669912969449606/1193238573315539085/dbc8c55a21688b446a5c57711b726956483a14ef8c5ddb861f897c0595ccb6b5.png?ex=65abfd05&is=65998805&hm=30087f41a4d9bbf32e594781062f508aabdc366e321b82ade161bcf8cb7cbe5f&",
+	"https://cdn.discordapp.com/attachments/1002669912969449606/1193238983422005278/f58978f175eba8065d1b5afe4545876d_original.png?ex=65abfd66&is=65998866&hm=e21d4a600bc7417a0867a021a16dd34e8f27aea09a87dacff56855b16bbe4f7f&",
+];
+const discount = [
+	"https://cdn.discordapp.com/attachments/1002669912969449606/1193245161015226449/9c310-17039481517218-1920.png?ex=65ac0327&is=65998e27&hm=ffb5befc6d50f8da4ef1df6c269f9a03f7365f1263634e0a44ec593a23cbdcc5&",
+	"https://cdn.discordapp.com/attachments/1002669912969449606/1193245590348365894/10074-17039485362450-1920.png?ex=65ac038e&is=65998e8e&hm=2be9bfcefa144cc5f1513d931965e19e91f58a32024306c7dd1f41f88a7db86a&",
+	"https://cdn.discordapp.com/attachments/1002669912969449606/1193245656287019008/58616-17039471631753-1920.png?ex=65ac039d&is=65998e9d&hm=fcdd02bab813c16716a3526bc09d0fbfdb40933986543b0ed9e45e42ba65a219&",
+	"https://cdn.discordapp.com/attachments/1002669912969449606/1193245717402230814/0d228-17039470050436-1920.png?ex=65ac03ac&is=65998eac&hm=c453d3518f97d9623f83b57f7ef83d8ad1243f937cdb4bc3881ca1347edbe3b7&",
+];
+const recent = [
+	"https://cdn.discordapp.com/attachments/1002669912969449606/1193235844392300634/Celeste_box_art_full.png?ex=65abfa7a&is=6599857a&hm=a52109215f9f1927186b5cf1e0a9295aac5cb469d528f11c20569aab35a6678a&",
+	"https://cdn.discordapp.com/attachments/1002669912969449606/1193238167273353379/e77cbe3c83da8de952bce5bc0f0960092dbc2e08d377f0e082673239322301bb.png?ex=65abfca4&is=659987a4&hm=a2feeddcc3f81d6cd41b4302e3972a34f710f6cbd107d7596a927f5e0db5dc39&",
+	"https://cdn.discordapp.com/attachments/1002669912969449606/1193238573315539085/dbc8c55a21688b446a5c57711b726956483a14ef8c5ddb861f897c0595ccb6b5.png?ex=65abfd05&is=65998805&hm=30087f41a4d9bbf32e594781062f508aabdc366e321b82ade161bcf8cb7cbe5f&",
+	"https://cdn.discordapp.com/attachments/1002669912969449606/1193238983422005278/f58978f175eba8065d1b5afe4545876d_original.png?ex=65abfd66&is=65998866&hm=e21d4a600bc7417a0867a021a16dd34e8f27aea09a87dacff56855b16bbe4f7f&",
+];
 ---
 
 <Layout title="Home | IndieStop.">
-	<nav class="flex flex-row justify-between items-center m-auto p-10">
-		<a href="/" class="font-bold text-4xl tracking-wide">
-			Indie<span class="text-brand-primary">Stop.</span></a
-		>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			class="w-full max-w-10"
-			fill="#e58e27"
-			viewBox="0 0 256 256"
-			><path
-				d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"
-			></path></svg
-		>
+	<div class="w-full h-full fixed inset-0 -z-10 opacity-30">
+		<img src="/glowiess.svg" class="absolute inset-0 -left-72 -z-10" />
+	</div>
+
+	<div class="w-full h-full fixed -z-10 opacity-60">
+		<img src="/glowiess.svg" class="absolute inset-0 left-[80vw] -z-10" />
+	</div>
+
+	<nav
+		class="flex flex-row justify-between items-center m-auto p-10 animate-fade-down animate-once"
+	>
+		<a href="/" class="font-bold text-4xl tracking-wide float-left">
+			<span class="text-indiegames">Indie</span><span
+				class="text-brand-primary">Games</span
+			>
+		</a>
+
+		<div class="flex gap-6">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="w-full max-w-10"
+				fill="#e58e27"
+				viewBox="0 0 256 256"
+				><path
+					d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"
+				></path></svg
+			>
+
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="w-full max-w-10"
+				fill="#e58e27"
+				viewBox="0 0 256 256"
+			>
+				<path
+					d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"
+				></path>
+			</svg>
+		</div>
 	</nav>
 
 	<!-- <div class="sticky top-3 w-full bg-brand-base">
@@ -50,117 +94,61 @@ import Layout from "../layouts/GeneralLayout.astro";
 	</div> -->
 
 	<section class="min-h-screen p-10 space-y-14">
-		<h1 class="font-bold text-2xl">Our Best Selection</h1>
+		<h1
+			class="font-bold text-2xl animate-fade-right animate-once animate-delay-200"
+		>
+			Our Best Selection
+		</h1>
 		<img
-			src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FtZXN8ZW58MHx8MHx8fDA%3D"
-			class="w-full object-cover h-72 rounded-2xl"
+			src="https://cdn.discordapp.com/attachments/1002669912969449606/1193241331070419137/googledocmediakix2lbg3lvm896x_658d138aa4de5.png?ex=65abff96&is=65998a96&hm=ccc1c3cfc30bb15105ebae5671d0a14012a1a030ea6aa65b15757a3f1e807a7c&"
+			class="w-full object-cover h-80 rounded-2xl animate-fade-right animate-once aspect-[16/9]"
 		/>
 		<h1 class="font-bold text-2xl">Rising Games</h1>
 		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-			<div class="space-y-2">
-				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Paul_C%C3%A9zanne%2C_1892-95%2C_Les_joueurs_de_carte_%28The_Card_Players%29%2C_60_x_73_cm%2C_oil_on_canvas%2C_Courtauld_Institute_of_Art%2C_London.jpg/345px-Paul_C%C3%A9zanne%2C_1892-95%2C_Les_joueurs_de_carte_%28The_Card_Players%29%2C_60_x_73_cm%2C_oil_on_canvas%2C_Courtauld_Institute_of_Art%2C_London.jpg"
-					class="object-cover w-auto h-72 rounded-2xl"
-				/>
-				<h3 class="font-medium text-md">Damn Expensive</h3>
-				<p class="text-brand-primary font-bold">$1000</p>
-			</div>
-			<div class="space-y-2">
-				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Paul_C%C3%A9zanne%2C_1892-95%2C_Les_joueurs_de_carte_%28The_Card_Players%29%2C_60_x_73_cm%2C_oil_on_canvas%2C_Courtauld_Institute_of_Art%2C_London.jpg/345px-Paul_C%C3%A9zanne%2C_1892-95%2C_Les_joueurs_de_carte_%28The_Card_Players%29%2C_60_x_73_cm%2C_oil_on_canvas%2C_Courtauld_Institute_of_Art%2C_London.jpg"
-					class="object-cover w-auto h-72 rounded-2xl"
-				/>
-				<h3 class="font-medium text-md">Damn Expensive</h3>
-				<p class="text-brand-primary font-bold">$1000</p>
-			</div>
-			<div class="space-y-2">
-				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Paul_C%C3%A9zanne%2C_1892-95%2C_Les_joueurs_de_carte_%28The_Card_Players%29%2C_60_x_73_cm%2C_oil_on_canvas%2C_Courtauld_Institute_of_Art%2C_London.jpg/345px-Paul_C%C3%A9zanne%2C_1892-95%2C_Les_joueurs_de_carte_%28The_Card_Players%29%2C_60_x_73_cm%2C_oil_on_canvas%2C_Courtauld_Institute_of_Art%2C_London.jpg"
-					class="object-cover w-auto h-72 rounded-2xl"
-				/>
-				<h3 class="font-medium text-md">Damn Expensive</h3>
-				<p class="text-brand-primary font-bold">$1000</p>
-			</div>
-			<div class="space-y-2">
-				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Paul_C%C3%A9zanne%2C_1892-95%2C_Les_joueurs_de_carte_%28The_Card_Players%29%2C_60_x_73_cm%2C_oil_on_canvas%2C_Courtauld_Institute_of_Art%2C_London.jpg/345px-Paul_C%C3%A9zanne%2C_1892-95%2C_Les_joueurs_de_carte_%28The_Card_Players%29%2C_60_x_73_cm%2C_oil_on_canvas%2C_Courtauld_Institute_of_Art%2C_London.jpg"
-					class="object-cover w-auto h-72 rounded-2xl"
-				/>
-				<h3 class="font-medium text-md">Damn Expensive</h3>
-				<p class="text-brand-primary font-bold">$1000</p>
-			</div>
+			{
+				rising.map((key) => (
+					<div class="space-y-2">
+						<img
+							src={key}
+							class="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
+						/>
+						<h3 class="font-medium text-md">Indie Game</h3>
+						<p class="text-brand-primary font-bold">$1000</p>
+					</div>
+				))
+			}
 		</div>
 		<h1 class="font-bold text-2xl">Discounted Games</h1>
 		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-			<div class="space-y-2">
-				<img
-					src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-					class="object-cover w-auto h-72 rounded-2xl"
-				/>
-				<h3 class="font-medium text-md">Damn Expensive</h3>
-				<p class="text-brand-primary font-bold">$1000</p>
-			</div>
-			<div class="space-y-2">
-				<img
-					src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-					class="object-cover w-auto h-72 rounded-2xl"
-				/>
-				<h3 class="font-medium text-md">Damn Expensive</h3>
-				<p class="text-brand-primary font-bold">$1000</p>
-			</div>
-			<div class="space-y-2">
-				<img
-					src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-					class="object-cover w-auto h-72 rounded-2xl"
-				/>
-				<h3 class="font-medium text-md">Damn Expensive</h3>
-				<p class="text-brand-primary font-bold">$1000</p>
-			</div>
-			<div class="space-y-2 w-full">
-				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Paul_C%C3%A9zanne%2C_1892-95%2C_Les_joueurs_de_carte_%28The_Card_Players%29%2C_60_x_73_cm%2C_oil_on_canvas%2C_Courtauld_Institute_of_Art%2C_London.jpg/345px-Paul_C%C3%A9zanne%2C_1892-95%2C_Les_joueurs_de_carte_%28The_Card_Players%29%2C_60_x_73_cm%2C_oil_on_canvas%2C_Courtauld_Institute_of_Art%2C_London.jpg"
-					class="object-cover w-full h-72 rounded-2xl"
-				/>
-				<h3 class="font-medium text-md">Damn Expensive</h3>
-				<p class="text-brand-primary font-bold">$1000</p>
-			</div>
+			{
+				discount.map((key) => (
+					<div class="space-y-2">
+						<img
+							src={key}
+							class="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
+						/>
+						<h3 class="font-medium text-md">Indie Game</h3>
+						<p class="text-brand-primary font-bold">$1000</p>
+					</div>
+				))
+			}
 		</div>
 		<h1 class="font-bold text-2xl">Recently Updated Games</h1>
 		<div
 			class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full"
 		>
-			<div class="space-y-2">
-				<img
-					src="https://images.unsplash.com/photo-1595429035839-c99c298ffdde?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdhbWVzfGVufDB8fDB8fHww"
-					class="object-cover w-auto h-72 rounded-2xl"
-				/>
-				<h3 class="font-medium text-md">Damn Expensive</h3>
-				<p class="text-brand-primary font-bold">$1000</p>
-			</div>
-			<div class="space-y-2">
-				<img
-					src="https://images.unsplash.com/photo-1595429035839-c99c298ffdde?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdhbWVzfGVufDB8fDB8fHww"
-					class="object-cover w-auto h-72 rounded-2xl"
-				/>
-				<h3 class="font-medium text-md">Damn Expensive</h3>
-				<p class="text-brand-primary font-bold">$1000</p>
-			</div>
-			<div class="space-y-2">
-				<img
-					src="https://images.unsplash.com/photo-1595429035839-c99c298ffdde?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdhbWVzfGVufDB8fDB8fHww"
-					class="object-cover w-auto h-72 rounded-2xl"
-				/>
-				<h3 class="font-medium text-md">Damn Expensive</h3>
-				<p class="text-brand-primary font-bold">$1000</p>
-			</div>
-			<div class="space-y-2">
-				<img
-					src="https://images.unsplash.com/photo-1595429035839-c99c298ffdde?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdhbWVzfGVufDB8fDB8fHww"
-					class="object-cover w-auto h-72 rounded-2xl"
-				/>
-				<h3 class="font-medium text-md">Damn Expensive</h3>
-				<p class="text-brand-primary font-bold">$1000</p>
-			</div>
+			{
+				recent.map((key) => (
+					<div class="space-y-2">
+						<img
+							src={key}
+							class="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
+						/>
+						<h3 class="font-medium text-md">Indie Game</h3>
+						<p class="text-brand-primary font-bold">$1000</p>
+					</div>
+				))
+			}
 		</div>
 	</section>
 </Layout>
