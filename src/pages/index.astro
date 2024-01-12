@@ -18,6 +18,9 @@ const recent = [
 	"https://cdn.discordapp.com/attachments/1002669912969449606/1193238573315539085/dbc8c55a21688b446a5c57711b726956483a14ef8c5ddb861f897c0595ccb6b5.png?ex=65abfd05&is=65998805&hm=30087f41a4d9bbf32e594781062f508aabdc366e321b82ade161bcf8cb7cbe5f&",
 	"https://cdn.discordapp.com/attachments/1002669912969449606/1193238983422005278/f58978f175eba8065d1b5afe4545876d_original.png?ex=65abfd66&is=65998866&hm=e21d4a600bc7417a0867a021a16dd34e8f27aea09a87dacff56855b16bbe4f7f&",
 ];
+import SLideShow from "../components/carousell";
+import AvatarDrop from "../components/avatardropdown";
+
 ---
 
 <Layout title="Home | IndieStop.">
@@ -59,6 +62,7 @@ const recent = [
 					d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"
 				></path>
 			</svg>
+			<AvatarDrop client:load />
 		</div>
 	</nav>
 
@@ -95,14 +99,12 @@ const recent = [
 
 	<section class="min-h-screen p-10 space-y-14">
 		<h1
-			class="font-bold text-2xl animate-fade-right animate-once animate-delay-200"
+			class="font-bold text-2xl animate-fade-right animate-once animate-delay-200 pb-10"
 		>
 			Our Best Selection
 		</h1>
-		<img
-			src="https://cdn.discordapp.com/attachments/1002669912969449606/1193241331070419137/googledocmediakix2lbg3lvm896x_658d138aa4de5.png?ex=65abff96&is=65998a96&hm=ccc1c3cfc30bb15105ebae5671d0a14012a1a030ea6aa65b15757a3f1e807a7c&"
-			class="w-full object-cover h-80 rounded-2xl animate-fade-right animate-once aspect-[16/9]"
-		/>
+		<SLideShow client:load />
+
 		<h1 class="font-bold text-2xl">Rising Games</h1>
 		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
 			{
@@ -152,3 +154,4 @@ const recent = [
 		</div>
 	</section>
 </Layout>
+../components/carousell
