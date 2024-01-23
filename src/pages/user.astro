@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/GeneralLayout.astro";
+import { supabase, User as SupabaseUser, error } from "../lib/supabase";
+let dataaa = Object.keys(SupabaseUser[2]);
+---
+
+<Layout title="Home | IndieStop.">
+	<div class="container">
+		<h1>Home</h1>
+		{
+			dataaa.map((data) => {
+				return <p>{data}</p>;
+			})
+		}
+		<img src={SupabaseUser[1].Avatar} />
+	</div>
+</Layout>
