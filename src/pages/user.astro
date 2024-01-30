@@ -3,11 +3,8 @@ import Layout from "../layouts/GeneralLayout.astro";
 import { supabase, User as SupabaseUser, error } from "../lib/supabase";
 let dataaa = Object.keys(SupabaseUser[0]);
 
-
-let { data: Game, error } = await supabase
-  .from('Game')
-  .select('*')
-          console.log(data)
+let { data: Game, error } = await supabase.from("Game").select("*");
+console.log(Game[0]);
 ---
 
 <Layout title="Home | IndieStop.">

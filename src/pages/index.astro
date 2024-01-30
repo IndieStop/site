@@ -20,7 +20,13 @@ const recent = [
 ];
 import SLideShow from "../components/carousell";
 import AvatarDrop from "../components/avatardropdown";
+import { supabase, User as SupabaseUser, error } from "../lib/supabase";
 
+let { data: Game, error } = await supabase
+	.from("Game")
+	.select("*")
+	.order("Review", { ascending: false })
+	.gt("Review", "8");
 ---
 
 <Layout title="Home | IndieStop.">
@@ -108,6 +114,19 @@ import AvatarDrop from "../components/avatardropdown";
 		<h1 class="font-bold text-2xl">Rising Games</h1>
 		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
 			{
+				Game.map((key) => (
+					<div id={key.uuid}>
+						<img
+							src={key.Thumbnail}
+							class="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
+						/>
+						<p>{key.Description}</p>
+					</div>
+				))
+			}
+		</div>
+		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+			{
 				rising.map((key) => (
 					<div class="space-y-2">
 						<img
@@ -154,4 +173,4 @@ import AvatarDrop from "../components/avatardropdown";
 		</div>
 	</section>
 </Layout>
-../components/carousell
+ ../components/carousell
