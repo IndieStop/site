@@ -1,7 +1,13 @@
 ---
 import Layout from "../layouts/GeneralLayout.astro";
 import { supabase, User as SupabaseUser, error } from "../lib/supabase";
-let dataaa = Object.keys(SupabaseUser[2]);
+let dataaa = Object.keys(SupabaseUser[0]);
+
+
+let { data: Game, error } = await supabase
+  .from('Game')
+  .select('*')
+          console.log(data)
 ---
 
 <Layout title="Home | IndieStop.">
