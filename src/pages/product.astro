@@ -7,7 +7,7 @@ const rising = [
   "https://cdn.discordapp.com/attachments/1002669912969449606/1193238983422005278/f58978f175eba8065d1b5afe4545876d_original.png?ex=65abfd66&is=65998866&hm=e21d4a600bc7417a0867a021a16dd34e8f27aea09a87dacff56855b16bbe4f7f&",
 ];
 const discount = [
-  "https://cdn.discordapp.com/attachments/1002669912969449606/1193245161015226449/9c310-17039481517218-1920.png?ex=65ac0327&is=65998e27&hm=ffb5befc6d50f8da4ef1df6c269f9a03f7365f1263634e0a44ec593a23cbdcc5&",
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193245590348365894/10074-17039485362450-1920.png?ex=65ac038e&is=65998e8e&hm=2be9bfcefa144cc5f1513d931965e19e91f58a32024306c7dd1f41f88a7db86a&",
   "https://cdn.discordapp.com/attachments/1002669912969449606/1193245590348365894/10074-17039485362450-1920.png?ex=65ac038e&is=65998e8e&hm=2be9bfcefa144cc5f1513d931965e19e91f58a32024306c7dd1f41f88a7db86a&",
   "https://cdn.discordapp.com/attachments/1002669912969449606/1193245656287019008/58616-17039471631753-1920.png?ex=65ac039d&is=65998e9d&hm=fcdd02bab813c16716a3526bc09d0fbfdb40933986543b0ed9e45e42ba65a219&",
   "https://cdn.discordapp.com/attachments/1002669912969449606/1193245717402230814/0d228-17039470050436-1920.png?ex=65ac03ac&is=65998eac&hm=c453d3518f97d9623f83b57f7ef83d8ad1243f937cdb4bc3881ca1347edbe3b7&",
@@ -30,12 +30,120 @@ let { data: Game, error } = await supabase
 ---
 
 <Layout title="Product">
-  <h1g >hello world</h1>
   <div class="w-full h-full fixed inset-0 -z-10 opacity-30">
-		<img src="/glowiess.svg" class="absolute inset-0 -left-72 -z-10" />
-	</div>
+    <img src="/glowiess.svg" class="absolute inset-0 -left-72 -z-10" />
+  </div>
 
-	<div class="w-full h-full fixed -z-10 opacity-60">
-		<img src="/glowiess.svg" class="absolute inset-0 left-[80vw] -z-10" />
-	</div>
+  <div class="w-full h-full fixed -z-10 opacity-60">
+    <img src="/glowiess.svg" class="absolute inset-0 left-[80vw] -z-10" />
+  </div>
+
+  <div class="none dark:bg-gray-800 py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row -mx-4">
+        <div class="md:flex-1 px-4">
+          <div class="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
+            <img
+              class="w-full h-full object-cover"
+              src="https://www.digitaltrends.com/wp-content/uploads/2022/07/stray-cat-ps5.jpg?resize=625%2C417&p=1;"
+              alt="Product Image"
+            />
+          </div>
+          <div class="flex -mx-2 mb-4">
+            <div class="w-1/2 px-2 flex items-center">
+              <button
+                class="w-full bg-brand-primary dark:bg-gray-600 text-black py-2 px-4 rounded-full font-bold hover:bg-orange-300 dark:hover:bg-gray-700 flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined mr-2">shopping_cart</span
+                >
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="w-1/2 px-2 flex items-center">
+              <button
+                class="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600 flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined mr-2">
+                  featured_seasonal_and_gifts
+                </span>
+                Add to Wishlist
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="md:flex-1 px-4">
+          <h2 class="text-2xl font-bold text-brand-primary mb-2">
+            Product Name
+          </h2>
+          <p class="text-brand-surface dark:text-gray-300 text-sm mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
+            ante justo. Integer euismod libero id mauris malesuada tincidunt.
+          </p>
+          <div class="flex mb-4">
+            <div class="mr-4">
+              <span class="font-bold text-brand-primary">Price:</span>
+              <span class="text-brand-surface">$29.99</span>
+            </div>
+            <div>
+              <span class="font-bold text-brand-primary">Availability:</span>
+              <span class="text-maroon-600 dark:text-gray-300">In Stock</span>
+            </div>
+          </div>
+          <div class="mb-4"></div>
+          <div>
+            <span class="font-bold text-brand-primary dark:text-gray-300"
+              >Product Description:</span
+            >
+            <p class="text-brand-surface dark:text-gray-300 text-sm mt-2">
+              Stray is a 2022 adventure game developed by BlueTwelve Studio and
+              published by Annapurna Interactive. The story follows a stray cat
+              who falls into a walled city populated by robots, machines, and
+              mutant bacteria, and sets out to return to the surface with the
+              help of a drone companion
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <h3 class="text-xl text-brand-primary font-semibold mb-4">Related Products</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
+        {
+          recent.map((key) => (
+            <div class="space-y-2">
+              <img
+                src={key}
+                class="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
+              />
+              <h3 class="font-medium text-md">Indie Game</h3>
+              <p class="text-brand-primary font-bold">$1000</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div>
+
+
+
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h3 class="text-xl text-brand-primary font-semibold mb-4">Customer Reviews</h3>
+      <div class="bg-grey-300 shadow-md rounded-lg p-4">
+
+        <div class="border-b pb-4 mb-4">
+
+          <p class="font-semibold">John Doe</p>
+
+          <p class="text-gray-600">"Great product, fast shipping!"</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 </Layout>
