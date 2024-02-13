@@ -20,13 +20,14 @@ const recent = [
 ];
 import SLideShow from "../components/carousell";
 import AvatarDrop from "../components/avatardropdown";
-import { supabase, User as SupabaseUser, error } from "../lib/supabase";
-
+import { supabase } from "../lib/supabase";
+import Searchbox from "../components/searchbox";
+let UserInput = "Undertale";
 let { data: Game, error } = await supabase
 	.from("Game")
 	.select("*")
 	.order("Review", { ascending: false })
-	.gt("Review", "8");
+	.ilike("Name", UserInput);
 ---
 
 <Layout title="Home | IndieStop.">
@@ -37,6 +38,8 @@ let { data: Game, error } = await supabase
 	<div class="w-full h-full fixed -z-10 opacity-60">
 		<img src="/glowiess.svg" class="absolute inset-0 left-[80vw] -z-10" />
 	</div>
+
+	<Searchbox client:load />
 
 	<nav
 		class="flex flex-row justify-between items-center m-auto p-10 animate-fade-down animate-once"
@@ -72,7 +75,7 @@ let { data: Game, error } = await supabase
 		</div>
 	</nav>
 
-	<!-- <div class="sticky top-3 w-full bg-brand-base">
+	<div class="sticky top-3 w-full bg-brand-base">
 		<div class="pt-2 w-full relative mx-auto text-gray-600 max-w-sm">
 			<input
 				class="border-[3px] border-brand-base focus:ring-brand-primary focus:border-brand-primary bg-brand-surface h-13 px-5 pr-16 rounded-xl text-md focus:outline-none w-full"
@@ -101,7 +104,7 @@ let { data: Game, error } = await supabase
 				</svg>
 			</button>
 		</div>
-	</div> -->
+	</div>
 
 	<section class="min-h-screen p-10 space-y-14">
 		<h1
@@ -120,7 +123,8 @@ let { data: Game, error } = await supabase
 							src={key.Thumbnail}
 							class="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
 						/>
-						<p>{key.Description}</p>
+						<h3 class="font-medium text-md">{key.Name}</h3>
+						<p class="text-brand-primary font-bold">${key.Price}</p>
 					</div>
 				))
 			}
@@ -173,4 +177,3 @@ let { data: Game, error } = await supabase
 		</div>
 	</section>
 </Layout>
- ../components/carousell
