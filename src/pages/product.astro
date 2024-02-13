@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/GeneralLayout.astro";
+const rising = [
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193235844392300634/Celeste_box_art_full.png?ex=65abfa7a&is=6599857a&hm=a52109215f9f1927186b5cf1e0a9295aac5cb469d528f11c20569aab35a6678a&",
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193238167273353379/e77cbe3c83da8de952bce5bc0f0960092dbc2e08d377f0e082673239322301bb.png?ex=65abfca4&is=659987a4&hm=a2feeddcc3f81d6cd41b4302e3972a34f710f6cbd107d7596a927f5e0db5dc39&",
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193238573315539085/dbc8c55a21688b446a5c57711b726956483a14ef8c5ddb861f897c0595ccb6b5.png?ex=65abfd05&is=65998805&hm=30087f41a4d9bbf32e594781062f508aabdc366e321b82ade161bcf8cb7cbe5f&",
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193238983422005278/f58978f175eba8065d1b5afe4545876d_original.png?ex=65abfd66&is=65998866&hm=e21d4a600bc7417a0867a021a16dd34e8f27aea09a87dacff56855b16bbe4f7f&",
+];
+const discount = [
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193245161015226449/9c310-17039481517218-1920.png?ex=65ac0327&is=65998e27&hm=ffb5befc6d50f8da4ef1df6c269f9a03f7365f1263634e0a44ec593a23cbdcc5&",
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193245590348365894/10074-17039485362450-1920.png?ex=65ac038e&is=65998e8e&hm=2be9bfcefa144cc5f1513d931965e19e91f58a32024306c7dd1f41f88a7db86a&",
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193245656287019008/58616-17039471631753-1920.png?ex=65ac039d&is=65998e9d&hm=fcdd02bab813c16716a3526bc09d0fbfdb40933986543b0ed9e45e42ba65a219&",
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193245717402230814/0d228-17039470050436-1920.png?ex=65ac03ac&is=65998eac&hm=c453d3518f97d9623f83b57f7ef83d8ad1243f937cdb4bc3881ca1347edbe3b7&",
+];
+const recent = [
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193235844392300634/Celeste_box_art_full.png?ex=65abfa7a&is=6599857a&hm=a52109215f9f1927186b5cf1e0a9295aac5cb469d528f11c20569aab35a6678a&",
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193238167273353379/e77cbe3c83da8de952bce5bc0f0960092dbc2e08d377f0e082673239322301bb.png?ex=65abfca4&is=659987a4&hm=a2feeddcc3f81d6cd41b4302e3972a34f710f6cbd107d7596a927f5e0db5dc39&",
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193238573315539085/dbc8c55a21688b446a5c57711b726956483a14ef8c5ddb861f897c0595ccb6b5.png?ex=65abfd05&is=65998805&hm=30087f41a4d9bbf32e594781062f508aabdc366e321b82ade161bcf8cb7cbe5f&",
+  "https://cdn.discordapp.com/attachments/1002669912969449606/1193238983422005278/f58978f175eba8065d1b5afe4545876d_original.png?ex=65abfd66&is=65998866&hm=e21d4a600bc7417a0867a021a16dd34e8f27aea09a87dacff56855b16bbe4f7f&",
+];
+import SLideShow from "../components/carousell";
+import AvatarDrop from "../components/avatardropdown";
+import { supabase, User as SupabaseUser, error } from "../lib/supabase";
+
+let { data: Game, error } = await supabase
+  .from("Game")
+  .select("*")
+  .order("Review", { ascending: false })
+  .gt("Review", "8");
+---
+
+<Layout title="Product">
+  <h1g >hello world</h1>
+  <div class="w-full h-full fixed inset-0 -z-10 opacity-30">
+		<img src="/glowiess.svg" class="absolute inset-0 -left-72 -z-10" />
+	</div>
+
+	<div class="w-full h-full fixed -z-10 opacity-60">
+		<img src="/glowiess.svg" class="absolute inset-0 left-[80vw] -z-10" />
+	</div>
+</Layout>
