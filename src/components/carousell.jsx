@@ -11,10 +11,10 @@ function SLideShow() {
         leftControl=" "
         rightControl=" "
       >
-        <img src="https://images.pexels.com/photos/19952083/pexels-photo-19952083/free-photo-of-sand-waves.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></img>
-        <img src="https://images.pexels.com/photos/19952083/pexels-photo-19952083/free-photo-of-sand-waves.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></img>
-        <img src="https://images.pexels.com/photos/19952083/pexels-photo-19952083/free-photo-of-sand-waves.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></img>
-        <img src="https://images.pexels.com/photos/19952083/pexels-photo-19952083/free-photo-of-sand-waves.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></img>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBhC1Hv7peAo7VhyjPtcv_0iBEyzisJ2pyCLr1bSl-tjPSbNWaRBvp5DlmKDcoEF4NEqRiq-j_wqVB2fFxe6Ra95VNaAwX0o489yOEaigAd51YRlzVkF883MJQJFiz0wXwUHvQlpC-Jo4/s1600/dark15.jpg"></img>
+        <img src="https://wallpapers.com/images/hd/indie-games-1920-x-1080-wallpaper-g244wa3im70ewmh1.jpg"></img>
+        <img src="https://w.wallha.com/ws/12/BMOP2s4a.png"></img>
+        <img src="https://e1.pxfuel.com/desktop-wallpaper/224/597/desktop-wallpaper-6-indie-games-we-hope-to-see-at-e3-the-pathless-game.jpg"></img>
         <img src="https://images.pexels.com/photos/19952083/pexels-photo-19952083/free-photo-of-sand-waves.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></img>
         <img src="https://images.pexels.com/photos/19952083/pexels-photo-19952083/free-photo-of-sand-waves.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"></img>
       </Carousel>
