@@ -20,7 +20,7 @@ const recent = [
 ];
 import SLideShow from "../components/carousell";
 import AvatarDrop from "../components/avatardropdown";
-import { supabase, User as SupabaseUser, error } from "../lib/supabase";
+import { supabase, User as SupabaseUser } from "../lib/supabase";
 
 let { data: Game, error } = await supabase
   .from("Game")
@@ -42,7 +42,7 @@ let { data: Game, error } = await supabase
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row -mx-4">
         <div class="md:flex-1 px-4">
-          <div class="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
+          <div class="h-[360px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
             <img
               class="w-full h-full object-cover"
               src="https://www.digitaltrends.com/wp-content/uploads/2022/07/stray-cat-ps5.jpg?resize=625%2C417&p=1;"
@@ -109,9 +109,11 @@ let { data: Game, error } = await supabase
   </div>
 
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-    <h3 class="text-xl text-brand-primary font-semibold mb-4">Related Products</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
+    <h3 class="text-xl text-brand-primary font-semibold mb-4">
+      Related Products
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
         {
           recent.map((key) => (
             <div class="space-y-2">
@@ -126,24 +128,18 @@ let { data: Game, error } = await supabase
         }
       </div>
     </div>
-    <div>
-
-
-
-    </div>
+    <div></div>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="text-xl text-brand-primary font-semibold mb-4">Customer Reviews</h3>
+      <h3 class="text-xl text-brand-primary font-semibold mb-4">
+        Customer Reviews
+      </h3>
       <div class="bg-grey-300 shadow-md rounded-lg p-4">
-
         <div class="border-b pb-4 mb-4">
-
           <p class="font-semibold">John Doe</p>
 
           <p class="text-gray-600">"Great product, fast shipping!"</p>
         </div>
-
       </div>
-
     </div>
   </div>
 </Layout>
